@@ -8,45 +8,106 @@
 </head>
 <body>
 <style>
+    header {
+        text-align: center;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+
     .container {
+        position: relative;
         display: flex;
         flex-direction: row;
         background-color: #a6bfd5;
     }
 
     .inner {
-        width: 20%;
-        padding: 40px;
+        width: 280px;
         margin: 30px;
+        height: 210px;
         background-color: #a6d5ad;
+        box-shadow: 0px 0 0px 0px #00000076, 0px 0 0px 0px #00000076;
+        background-color: #00000076;
     }
+
+    .overlay {
+        position: absolute; /* Sit on top of the page content */
+        width: 280px; /* Full width (cover the whole page) */
+        height: 60px; /* Full height (cover the whole page) */
+        bottom: 30px; 
+        background-color: rgba(255, 255, 255, 0.64); 
+        z-index: 2; 
+        text-align: center;
+        line-height: 15px;
+        padding: 3px;
+        overflow: hidden;
+
+}
+
+    img {
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+    }
+
+    footer {
+        background-color: aquamarine;
+        top: 95%;  /* Figure this one out */
+        bottom: 100%
+    }
+
+
 </style>
 
 
-<Header>
-    Escape the Net
+<Header><h1>
+    Fin's Games</h1>
 </Header>
 
 <p>Here's a collection of games/projects I've been working on. <br>
     Stay tuned for more stuff. <br>
     If you're stuck on one of the games, get in touch through my Github account: f-mcp <br>
-    Cheers - Fin</p>
+    Nice one.</p>
 
 <section class="container">
 
-    <div class="inner">
-        hello
+    <div class="inner" href="https://website-project-3xg9.onrender.com">
+        <img src="new_game_img.png" width="280">
+        <div class="overlay">
+            <h1>fin's game.</h1>
+        </div>
+        <p>Simple, linear game with 20 levels. Think outside of the box to get through them all.
+            <br><i>Good on: Chrome, Safari, Edge<br>
+            Bad on: Firefox<br>
+            Impossible on: Mobile</i>
+        </p>
     </div>
 
-    <div class="inner">
-        grello
-    </div>    
-    
-    <div class="inner">
-        hello
+    <div class="inner" href="https://website-project-3xg9.onrender.com">
+        <img src="brief.png" width="280">
+        <div class="overlay">
+            <h1>The Hunt for Mr X</h1>
+        </div>
+        <p>
+        </p>
     </div>
+
+    <div class="inner" href="https://website-project-3xg9.onrender.com">
+        <img src="banner.png" width="280">
+        <div class="overlay">
+            <h1>Goat Forge</h1>
+        </div>
+        <p>My old man's smithing page.
+        </p>
+    </div>
+    
+
 </section>
 
-
+<footer>
+    <br><br><br><br><br><br><br><br><br><br><br><br>by Fin McPartlin
+</footer>
 </body>
 </html>
