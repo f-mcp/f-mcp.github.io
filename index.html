@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape the Net</title>
+    <title>Fin's Stuff</title>
     <!-- Home page for my projects -->
 </head>
 <body>
 <style>
+    body {
+        background-color: rgb(27, 1, 37);
+        color: white;
+        font-family: georgia;
+    }
+
+    p {
+        margin: 20px;
+    }
+
     header {
         text-align: center;
     }
@@ -20,14 +30,14 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        background-color: #a6bfd5;
+        background-color: #4e5962;
     }
 
     .inner {
         width: 280px;
         margin: 30px;
         height: 210px;
-        background-color: #a6d5ad;
+        background-color: #38473b;
         box-shadow: 0px 0 0px 0px #00000076, 0px 0 0px 0px #00000076;
         background-color: #00000076;
     }
@@ -36,15 +46,21 @@
         position: absolute; /* Sit on top of the page content */
         width: 280px; /* Full width (cover the whole page) */
         height: 60px; /* Full height (cover the whole page) */
-        bottom: 30px; 
         background-color: rgba(255, 255, 255, 0.64); 
         z-index: 2; 
         text-align: center;
         line-height: 15px;
+        bottom: 30px;
         padding: 3px;
         overflow: hidden;
+        color: black;
 
-}
+    }
+
+    .overlay:hover {
+        transform: matrix();
+
+    }
 
     img {
         display: block;
@@ -53,7 +69,7 @@
     }
 
     footer {
-        background-color: aquamarine;
+        background-color: rgb(107, 71, 3);
         top: 95%;  /* Figure this one out */
         bottom: 100%
     }
@@ -63,20 +79,22 @@
 
 
 <Header><h1>
-    Fin's Games</h1>
+    Fin's Stuff</h1>
 </Header>
 
 <p>Here's a collection of games/projects I've been working on. <br>
+    I've been enjoying messing around with Flask, which is what each of these use. 
+    Github won't host dynamic stuff like flask pages, so these links are external.<br>
     Stay tuned for more stuff. <br>
-    If you're stuck on one of the games, get in touch through my Github account: f-mcp <br>
+    If you're stuck on one of the games, get in touch through my Github account: f-mcp <br><br>
     Nice one.</p>
 
 <section class="container">
 
     <div class="inner">
-        <img src="new_game_img.png" width="280" href="https://website-project-3xg9.onrender.com">
-        <div class="overlay">
-            <h1>fin's game.</h1>
+        <a href="https://website-project-3xg9.onrender.com"><img src="new_game_img.png" width="280" ></a>
+        <div class="overlay" >
+            <h1>new game.</h1>
         </div>
         <p>Simple, linear game with 20 levels. Think outside of the box to get through them all.
             <br><i>Good on: Chrome, Safari, Edge<br>
@@ -90,7 +108,7 @@
         <div class="overlay">
             <h1>The Hunt for Mr X</h1>
         </div>
-        <p>
+        <p>A paper trail fugitive chase through the entire internet.
         </p>
     </div>
 
@@ -99,15 +117,13 @@
         <div class="overlay">
             <h1>Goat Forge</h1>
         </div>
-        <p>My old man's smithing page.
+        <p>A website I made for my old man for his smithing.
         </p>
     </div>
     
 
 </section>
 
-<footer>
-    <br><br><br><br><br><br><br><br><br><br><br><br>by Fin McPartlin
-</footer>
+
 </body>
 </html>
