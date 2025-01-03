@@ -4,126 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fin's Stuff</title>
-    <!-- Home page for my projects -->
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-family: georgia;
+        }
+
+        p {
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: #2c2c2c;
+            margin: 40px;
+            border-color: #000000;
+            border-width: 3px;
+            border: 1px solid #000000;
+            border-radius: 18px;
+        }
+
+        .inner {
+            position: relative;
+            z-index: 1;
+            width: 280px;
+            margin: 30px;
+            height: 350px;
+            background-color: #38473b00;
+            box-shadow: 0px 0 0px 0px #00000076, 0px 0 0px 0px #00000076;
+        }
+
+        .inner.active {
+            z-index: 6;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 280px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.64); 
+            text-align: center;
+            line-height: 15px;
+            bottom: 140px;
+            padding: 3px;
+            color: black;
+        }
+
+        .bigoverlay {
+            position: absolute;
+            width: 280px;
+            height: 210px;
+            background-color: transparent;
+            border: 5px solid transparent;
+            z-index: 4;
+            top: 0;
+        }
+
+        .bigoverlay:hover {
+            border: 5px solid white;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .inner.active img, 
+        .inner.active .overlay, 
+        .inner.active .bigoverlay, 
+        .inner.active p {
+            z-index: 7;
+        }
+
+    </style>
 </head>
 <body>
-<style>
-    body {
-        background-color: rgb(27, 1, 37);
-        color: white;
-        font-family: georgia;
-    }
+    <header>
+        <h1><u>Fin's Stuff</u></h1>
+    </header>
 
-    p {
-        margin: 20px;
-    }
+    <p>Here's a collection of games/projects I've been working on. <br>
+        I've been enjoying messing around with Flask, which is what each of these use, with the exception of Goat Forge. 
+        Github won't host dynamic stuff like flask pages, so these links are external.<br>
+        Stay tuned for more stuff. <br>
+        If you're stuck on one of the games, get in touch through my Github account: f-mcp <br><br>
+        Nice one.</p>
 
-    header {
-        text-align: center;
-    }
-    
-    * {
-        box-sizing: border-box;
-    }
+    <section class="container">
 
-    .container {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        background-color: #4e5962;
-    }
-
-    .inner {
-        width: 280px;
-        margin: 30px;
-        height: 210px;
-        background-color: #38473b;
-        box-shadow: 0px 0 0px 0px #00000076, 0px 0 0px 0px #00000076;
-        background-color: #00000076;
-    }
-
-    .overlay {
-        position: absolute; /* Sit on top of the page content */
-        width: 280px; /* Full width (cover the whole page) */
-        height: 60px; /* Full height (cover the whole page) */
-        background-color: rgba(255, 255, 255, 0.64); 
-        z-index: 2; 
-        text-align: center;
-        line-height: 15px;
-        bottom: 30px;
-        padding: 3px;
-        overflow: hidden;
-        color: black;
-
-    }
-
-    .overlay:hover {
-        transform: matrix();
-
-    }
-
-    img {
-        display: block;
-        overflow: hidden;
-        aspect-ratio: 4/3;
-    }
-
-    footer {
-        background-color: rgb(107, 71, 3);
-        top: 95%;  /* Figure this one out */
-        bottom: 100%
-    }
-
-
-</style>
-
-
-<Header><h1>
-    Fin's Stuff</h1>
-</Header>
-
-<p>Here's a collection of games/projects I've been working on. <br>
-    I've been enjoying messing around with Flask, which is what each of these use. 
-    Github won't host dynamic stuff like flask pages, so these links are external.<br>
-    Stay tuned for more stuff. <br>
-    If you're stuck on one of the games, get in touch through my Github account: f-mcp <br><br>
-    Nice one.</p>
-
-<section class="container">
-
-    <div class="inner">
-        <a href="https://website-project-3xg9.onrender.com"><img src="new_game_img.png" width="280" ></a>
-        <div class="overlay" >
-            <h1>new game.</h1>
+        <div class="inner" data-video="video1.mp4">
+            <img src="new_game_img.png" width="280">
+            <div class="overlay"><h1>new game.</h1></div>
+            <a href="https://website-project-3xg9.onrender.com/"><div class="bigoverlay"></div></a>
+            <p>Simple, linear game with 20 levels. Think outside of the box to get through them all.
+                <br><i>Good on: Chrome, Safari, Edge<br>
+                Bad on: Firefox<br>
+                Impossible on: Mobile</i>
+            </p>
         </div>
-        <p>Simple, linear game with 20 levels. Think outside of the box to get through them all.
-            <br><i>Good on: Chrome, Safari, Edge<br>
-            Bad on: Firefox<br>
-            Impossible on: Mobile</i>
-        </p>
-    </div>
 
-    <div class="inner">
-        <img src="brief.png" width="280" href="https://website-project-3xg9.onrender.com">
-        <div class="overlay">
-            <h1>The Hunt for Mr X</h1>
+        <div class="inner" data-video="smoke.mp4">
+            <img src="brief.png" width="280">
+            <div class="overlay"><h1>The Hunt for Mr X</h1></div>
+            <a href="https://the-hunt-for-mr-x.onrender.com"><div class="bigoverlay"></div></a>
+            <p>A paper trail fugitive chase through the entire internet.</p>
         </div>
-        <p>A paper trail fugitive chase through the entire internet.
-        </p>
-    </div>
 
-    <div class="inner">
-        <img src="banner.png" width="280" href="https://website-project-3xg9.onrender.com">
-        <div class="overlay">
-            <h1>Goat Forge</h1>
+        <div class="inner" data-video="gasgifvid.mp4">
+            <img src="banner.png" width="280">
+            <div class="overlay"><h1>Goat Forge</h1></div>
+            <a href="https://goatforge.com"><div class="bigoverlay"></div></a>
+            <p>A website I made for my old man for his smithing.</p>
         </div>
-        <p>A website I made for my old man for his smithing.
-        </p>
-    </div>
-    
+    </section>
 
-</section>
+    <video class="video-background" muted loop></video>
 
+    <script>
+        const bigoverlays = document.querySelectorAll('.bigoverlay');
+        const video = document.querySelector('.video-background');
 
+        bigoverlays.forEach(bigoverlay => {
+            bigoverlay.addEventListener('mouseenter', () => {
+                // Find the parent 'inner' element
+                const inner = bigoverlay.closest('.inner');
+
+                // Get the video file from the data attribute
+                const videoSrc = inner.getAttribute('data-video');
+                video.src = videoSrc;
+
+                // Play and show the video
+                video.play();
+                video.style.opacity = 1;
+
+                // Highlight the hovered item
+                document.querySelectorAll('.inner').forEach(el => el.classList.remove('active'));
+                inner.classList.add('active');
+            });
+
+            bigoverlay.addEventListener('mouseleave', () => {
+                // Pause and hide the video
+                video.pause();
+                video.style.opacity = 0;
+
+                // Reset all items
+                document.querySelectorAll('.inner').forEach(el => el.classList.remove('active'));
+            });
+        });
+    </script>
 </body>
 </html>
